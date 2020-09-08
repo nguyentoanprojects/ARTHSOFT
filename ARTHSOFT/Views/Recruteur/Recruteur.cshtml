@@ -1,0 +1,51 @@
+﻿@using ARTHSOFT.Models
+@model Login
+
+@{
+    ViewBag.Title = "Recruteur";
+}
+
+@Styles.Render("~/Content/Recruter/recruteur.css")
+
+<div id="recruiter" class="container-recruiter">
+    <div class="card-recruiter card">
+        <div class="card-header">
+            <div class="card-header-logo">
+                <img alt="logo-arthsoft" src="~/Content/Images/logo.jpg" class="d-inline-block align-top logo" />
+            </div>
+            <div class="card-header-title"> VISUALISATION DES CANDIDATURES</div>
+        </div>
+
+        <div class="card-body">
+            <table class="table table-candidacy">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Email</th>
+                        <th>Numéro de téléphone</th>
+                        <th>Date d'émission</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- ko foreach: Candidacies() -->
+                    <tr>
+                        <td data-bind="text: LastName"></td>
+                        <td data-bind="text: FirstName"></td>
+                        <td data-bind="text: Email"></td>
+                        <td data-bind="text: PhoneNumber"></td>
+                        <td data-bind="text: Date"></td>
+                    </tr>
+                    <!-- /ko -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/knockout")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/Recruteur/recruteur.js")
+}

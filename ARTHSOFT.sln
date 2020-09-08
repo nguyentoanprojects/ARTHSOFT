@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ARTHSOFT", "ARTHSOFT\ARTHSOFT.csproj", "{E9D1593C-DB19-46B8-AA6A-F968560C16DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ARTHSOFTTests", "ARTHSOFTTests\ARTHSOFTTests.csproj", "{799E685E-F59E-4297-8974-C2ADE4B919DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E9D1593C-DB19-46B8-AA6A-F968560C16DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9D1593C-DB19-46B8-AA6A-F968560C16DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9D1593C-DB19-46B8-AA6A-F968560C16DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9D1593C-DB19-46B8-AA6A-F968560C16DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{799E685E-F59E-4297-8974-C2ADE4B919DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{799E685E-F59E-4297-8974-C2ADE4B919DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{799E685E-F59E-4297-8974-C2ADE4B919DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{799E685E-F59E-4297-8974-C2ADE4B919DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E42607CE-E243-4BFF-9F81-F39A23EFACC8}
+	EndGlobalSection
+EndGlobal

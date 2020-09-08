@@ -1,0 +1,51 @@
+﻿@using ARTHSOFT.Models
+@model Login
+
+@{
+    ViewBag.Title = "Espace recruteur";
+}
+
+@Styles.Render("~/Content/Login/login.css")
+
+<div class="login-container">
+    <div class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+        <div class="container">
+            <div class="card login-card">
+                <div class="row no-gutters">
+                    <div class="col-md-5 container-login-card-img">
+                        <img src="@Url.Content("~/Content/Images/background-login.jpg")" alt="login" class="login-card-img">
+                    </div>
+                    <div class="col-md-7 container-login-card-body">
+                        <div class="card-body">
+                            <h2>@ViewBag.Title</h2>
+                            <hr />
+                            @using (Html.BeginForm("LoginRecruteur", "Login", new { }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                            {
+                                @Html.AntiForgeryToken()
+
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Email, new { @class = "sr-only" })
+                                    @Html.TextBoxFor(m => m.Email, new { placeholder = "Email", @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group mb-4">
+                                    @Html.LabelFor(m => m.Password, new { @class = "sr-only" })
+                                    @Html.PasswordFor(m => m.Password, new { placeholder = "Mot de passe", @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group" style="margin-top:30px">
+                                    <input type="submit" value="Connexion" class="btn login-btn" />
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

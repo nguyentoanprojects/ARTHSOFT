@@ -1,0 +1,172 @@
+﻿.container-candidate {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5%;
+}
+
+.container-cv {
+    position: relative;
+    top: 25px;
+}
+
+.cv {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.cv img {
+    width: 110px;
+    height: 110px;
+    margin-bottom: 15px;
+}
+
+.card-candidate {
+    border: 0;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px 0 rgba(172, 168, 168, 0.43);
+    overflow: hidden;
+    padding: 30px;
+    min-height: 200px;
+}
+
+.card-header {
+    border-bottom: 1px solid #101010;
+    padding-bottom: 25px;
+}
+
+.card-header-title {
+    position: relative;
+    left: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.form-candidat {
+    padding: 15px;
+}
+
+.container-avatar {
+    margin: 25px 0px 40px 15px;
+}
+
+.avatar {
+    position: relative;
+    top: 10px;
+    width: 80px;
+}
+
+.avatar img{
+    display: block;
+    width: 110px;
+    height: 110px;
+    border: 1px solid #101010;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.avatar input[type="file"] {
+    display: block;
+}
+
+.container-contact {
+    display: inline-block;
+    width: 100%;
+}
+
+.container-experiences {
+    display: inline-block;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.container-formations {
+    display: inline-block;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.container-skills {
+    display: inline-block;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.container-other-information {
+    display: inline-block;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.action-button {
+    position: relative;
+    left: 10px;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+}
+
+.container-apply {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.button-apply {
+    padding: 13px 20px 12px;
+    background-color: #000;
+    border-radius: 4px;
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #fff;
+    margin-bottom: 24px; 
+}
+
+.button-apply:hover {
+    border: 1px solid #000;
+    background-color: transparent;
+    color: #000; 
+}
+
+@media (max-width: 993px) {
+    .container-avatar {
+        width: 100%;
+        padding-left: 0px;
+    }
+
+    .container-cv {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .container-avatar img {
+        width: 64px;
+        height: 64px;
+    }
+
+    .container-cv img {
+        width: 64px;
+        height: 64px;
+    }
+
+    .container-input-formation {
+        float: left;
+        width: 80%;
+    }
+
+    .container-input-experience {
+        float: left;
+        width: 80%;
+    }
+
+    .container-skills {
+        float: left;
+        width: 80%;
+    }
+
+    .container-other-information {
+        float: left;
+        width: 80%;
+    }
+}

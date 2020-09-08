@@ -1,0 +1,44 @@
+﻿@using ARTHSOFT.Models
+@model Login
+
+@{
+    ViewBag.Title = "Bienvenue sur la plateforme de candidature ARTHSOFT";
+}
+
+@Styles.Render("~/Content/Login/login.css")
+
+<div class="login-container">
+    <div class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+        <div class="container">
+            <div class="card login-card">
+                <div class="row no-gutters">
+                    <div class="col-md-5 container-login-card-img">
+                        <img src="@Url.Content("~/Content/Images/background-login.jpg")" alt="login" class="login-card-img">
+                    </div>
+                    <div class="col-md-7 container-login-card-body">
+                        <div class="card-body">
+                            <h3>@ViewBag.Title</h3>
+                            <hr />
+                            <div class="card-roles">
+                                <div class="form-group">
+                                    <a id="loginLink" href="@Url.Content("~/Login/LoginRecruteur")">
+                                        <input type="submit" id="redirectToRecruteur" class="btn login-btn login-btn-role" value="RECRUTEUR" />
+                                    </a>
+                                </div>
+                                <div class="form-group">
+                                    <a id="loginLink" href="@Url.Content("~/Candidat/Candidat")">
+                                        <input type="submit" id="redirectToCandidat" class="btn login-btn login-btn-role" value="CANDIDAT" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

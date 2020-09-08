@@ -1,0 +1,176 @@
+﻿@using ARTHSOFT.Models
+@model Login
+
+@{
+    ViewBag.Title = "Candidat";
+}
+
+@Styles.Render("~/Content/Candidat/candidat.css")
+
+<div id="candidate" class="container-candidate">
+    <div class="card-candidate card">
+        <div class="card-header">
+            <div class="card-header-logo">
+                <img alt="logo-arthsoft" src="~/Content/Images/logo.jpg" class="d-inline-block align-top logo" />
+            </div>
+            <div class="card-header-title"> CANDIDATURE SPONTANEE DEVELOPPEUR WEB</div>
+        </div>
+
+        <div class="card-body">
+            <form data-bind="with: Candidacy()" id="formCandidacy" enctype="multipart/form-data">
+                <div class="form-row">
+                    <div class="container-avatar col-md-4">
+                        <label for="image">Photo de profil</label>
+                        <div class="avatar">
+                            <img id="imageAvatar" alt="Avatar" class="img-rounded thumb" src="~/Content/Images/avatar.jpg">
+                            <input id="uploadImage" type="file" name="uploadImage" class="form-control-file" style="margin-top: 10px" accept="image/*">
+                        </div>
+                    </div>
+                    <div class="container-cv col-md-4">
+                        <label for="image">CV au format PDF</label>
+                        <div class="cv">
+                            <img id="imageAvatar" alt="Avatar" class="img-rounded thumb" src="~/Content/Images/pdf.jpg">
+                            <input id="uploadCV" type="file" name="uploadCV" class="form-control-file" accept="application/pdf">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-contact" data-bind="with: Contact()">
+                    <h3> Coordonnées </h3>
+                    <hr />
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputNom">Nom *</label>
+                            <input type="text" class="form-control" id="inputNom" placeholder="Nom" data-bind="value: LastName" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPrenom">Prénom *</label>
+                            <input type="text" class="form-control" id="inputPrenom" placeholder="Prénom" data-bind="value: FirstName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail">Email *</label>
+                            <input type="text" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Email" data-bind="value: Email" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPhoneNumber">Numéro de téléphone *</label>
+                            <input type="text" class="form-control" id="inputPhoneNumber" placeholder="Téléphone" data-bind="value: PhoneNumber" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputAddress">Adresse postale</label>
+                            <input type="text" class="form-control" id="inputAddress" data-bind="value: Address">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputCity">Ville</label>
+                            <input type="text" class="form-control" id="inputCity" placeholder="Ville" data-bind="value: City">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputZIP">Code postal</label>
+                            <input type="text" class="form-control" id="inputZIP" placeholder="CP" data-bind="value: ZIP">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-formations">
+                    <h3>
+                        Formations *
+                        <img src="~/Content/Images/add.jpg" class="action-button" data-bind="click: addFormation" />
+                    </h3>
+                    <hr />
+                    <!-- ko foreach: Formations() -->
+                    <div class="col-md-9 container-input-formation" style="margin-bottom: 10px">
+                        <input type="text" class="form-control" placeholder="AAAA/AAAA - Ecole - Diplôme - Lieu" data-bind="value: Value" />
+                        <small id="formationHelp" class="form-text text-muted">Veuillez remplir le champ de la façon suivante: AAAA/AAAA - Ecole - Diplôme - Lieu</small>
+                    </div>
+                    <div class="col-md-1" style="margin-bottom: 10px">
+                        <img src="~/Content/Images/delete.jpg" class="action-button" data-bind="click: $parent.deleteFormation" />
+                    </div>
+                    <!-- /ko -->
+                </div>
+
+                <div class="container-experiences">
+                    <h3>
+                        Expériences *
+                        <img src="~/Content/Images/add.jpg" class="action-button" data-bind="click: addExperience" />
+                    </h3>
+                    <hr />
+                    <!-- ko foreach: Experiences() -->
+                    <div class="col-md-9 container-input-experience" style="margin-bottom: 10px">
+                        <input type="text" class="form-control" placeholder="AAAA/AAAA - Entreprise - Poste - Lieu" data-bind="value: Value" />
+                        <small id="experienceHelp" class="form-text text-muted">Veuillez remplir le champ de la façon suivante: AAAA/AAAA - Entreprise - Poste - Lieu</small>
+                    </div>
+                    <div class="col-md-1" style="margin-bottom: 10px">
+                        <img src="~/Content/Images/delete.jpg" class="action-button" data-bind="click: $parent.deleteExperience" />
+                    </div>
+                    <!-- /ko -->
+                </div>
+
+                <div class="container-skills">
+                    <h3>
+                        Compétences *
+                    </h3>
+                    <hr />
+                    <div class="form-group">
+                        <textarea class="form-control" id="skills" rows="3" data-bind="value: Skills"></textarea>
+                        <small id="skillsHelp" class="form-text text-muted">Veuillez séparer chaque compétence par une virgule</small>
+                    </div>
+                </div>
+
+                <div class="container-other-information">
+                    <h3>
+                        Autres informations
+                    </h3>
+                    <hr />
+                    <div class="form-group">
+                        <textarea class="form-control" id="otherInformation" rows="3" data-bind="value: OtherInformation"></textarea>
+                    </div>
+                </div>
+
+                <div class="container-apply">
+                    <!-- ko ifnot: $parent.Loading -->
+                    <button type="submit" id="apply" class="button-apply" data-bind="click: $parent.Apply">POSTULER</button>
+                    <!-- /ko -->
+
+                    <!-- ko if: $parent.Loading -->
+                    <img style="width: 64px; height: 64px" src="~/Content/Images/load.gif" alt="Chargement" id="loading" />
+                    <!-- /ko -->
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalDialog" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" id="title"></h4>
+                </div>
+                <div class="modal-body">
+                    <p id="error"></p>
+                </div>
+                <div class="modal-footer">
+                    <button id="closeModal" type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/knockout")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/Candidat/candidat.js")
+    @Scripts.Render("https://maps.googleapis.com/maps/api/js?key=AIzaSyDuF38V0ivrSFvqVglF3vZBCXVrBxO8DTI&libraries=places")
+}

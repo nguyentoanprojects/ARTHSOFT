@@ -1,0 +1,27 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Login", new { area = "" }, FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+    @Html.AntiForgeryToken()
+
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a id="manage" href="@Url.Content("~/Manage")">
+                <img src="~/Content/Images/settings.jpg" alt="Paramètres" title="Paramètres" width="23" height="23" />
+            </a>
+        </li>
+        <li><a href="javascript:sessionStorage.removeItem('accessToken');$('#logoutForm').submit();"><img src="~/Content/Images/logout.jpg" alt="Se déconnecter" title="Se déconnecter" width="23" height="23" /></a></li>
+    </ul>
+    }
+}
+else
+{
+<ul class="nav navbar-nav navbar-right">
+    <li>
+        <a href="@Url.Content("~/")">
+            <img src="~/Content/Images/home.jpg" alt="Accueil" title="Accueil" width="23" height="23" />
+        </a>
+    </li>
+</ul>
+}
